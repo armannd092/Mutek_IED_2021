@@ -20,11 +20,9 @@
 		physicallyCorrectLights: true;">
 		<!--List of assets that you will have in the scene-->
 			<a-assets>
-			<a-asset-item id="sneeker" src="asset/reeboke.gltf"></a-asset-item>
-			<a-asset-item id="mutekplanet" src="asset/MuteckPlanet.gltf"></a-asset-item>
-			<a-asset-item id="iedplanet" src="asset/IEDPlanet.gltf"></a-asset-item>
+			<a-asset-item id="univers" src="asset/HodaTest.gltf"></a-asset-item>
 			</a-assets>
-
+			<a-entity raycaster="objects: .clickable" cursor></a-entity>
 			<!--Marker: this has to be change acording to your design-->
 			<a-marker 
 			id="memarker" 
@@ -35,31 +33,16 @@
 			smoothTolerance="0.01" 
 			smoothThreshold="5">
 
-			<a-entity id="mouseCursor" 
-			cursor="rayOrigin: mouse" 
-			raycaster="objects: .clickable">
-			</a-entity>
-			<a-entity id="reeboke"
-			gltf-model="#sneeker" 
-			position="0 0 0" 
-			rotation="90 0 180" 
-			scale="1 1 1"
-			></a-entity>
-
-			<a-entity id="mutek"
-			gltf-model="#mutekplanet" 
-			position="0 0 0" 
-			rotation="90 0 180" 
-			scale="1 1 1" 
-			animation-mixer
-			></a-entity>
-
-			<a-entity id="ied"
-			gltf-model="#iedplanet" 
-			position="0 0 0" 
-			rotation="90 0 180" 
-			scale="1 1 1"
-			></a-entity>
+			
+				<a-entity 
+				planets 
+				class="clickable" 
+				id="univers"
+				gltf-model="#univers" 
+				position="0 0 0" 
+				rotation="90 0 180" 
+				scale="1 1 1"
+				></a-entity>
 
 			</a-marker>
 		<a-entity camera></a-entity>
