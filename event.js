@@ -1,20 +1,14 @@
-AFRAME.registerComponent('raycaster-listen', {
-    init: function () {
-    // Use events to figure out what raycaster is listening so we don't have to
-    // hardcode the raycaster.
-    this.el.addEventListener('raycaster-intersected', evt => {
-      this.raycaster = evt.detail.el;
-    });
-    this.el.addEventListener('raycaster-intersected-cleared', evt => {
-      this.raycaster = null;
-    });
-  },
+AFRAME.registerComponent('markerhandler', {
 
-  tick: function () {
-    if (!this.raycaster) { return; }  // Not intersecting.
+    init: function() {
+        const animatedMarker = document.querySelector("#animated-marker");
+        const aEntity = document.querySelector("#animated-model");
 
-    let intersection = this.raycaster.components.raycaster.getIntersection(this.el);
-    if (!intersection) { return; }
-    console.log(intersection.point);
-  }
-});
+        // every click, we make our model grow in size :)
+        animatedMarker.addEventListener('click', function(ev, target){
+            const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+            if (aEntity && intersectedElement === aEntity) {
+              console.log()
+            }
+        });
+}});
