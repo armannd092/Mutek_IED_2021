@@ -17,9 +17,9 @@ AFRAME.registerComponent('soundControl', {
 				// TODO: Add your own code here to react to the marker being lost.
 			});
 		}
-	}
+	});
 
-AFRAME.registerComponent('treeman', {
+AFRAME.registerComponent('selector', {
 	init: function(){
 		let el = this.el;
 		let self = this;
