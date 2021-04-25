@@ -3,6 +3,9 @@
 	<title>Mutek-IED-2021</title>
 	<!--This line has to be added in order to make content play on ios devices-->
 	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<!--Following lines are links to the libraries that we are using in this project-->
 	<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 	<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
@@ -21,51 +24,27 @@
 		<!--List of assets that you will have in the scene-->
 			<a-assets>
 				<a-asset-item id="univers" src="asset/Univers.gltf"></a-asset-item>
+				<audio id="spring" src="asset/soundDesign3.mp3" preload="auto"></audio>
+				<!--a-asset-item id="animation" src="https://assets-991450772065.s3-accesspoint.eu-west-3.amazonaws.com/HodaAnimation.gltf"></a-asset-item-->
 			</a-assets>
-			<a-assets>
-				<a-asset-item id="animation" src="https://assets-991450772065.s3-accesspoint.eu-west-3.amazonaws.com/HodaAnimation.gltf"></a-asset-item>
-			</a-assets>
+			<!--a-assets>
+				
+			</a-assets-->
 			<a-entity raycaster="objects: .clickable" cursor></a-entity>
 			<!--Marker: this has to be change acording to your design-->
 			<a-marker markerhandler 
+			playSound
 			emitevents="true" 
 			cursor="rayOrigin: mouse"
 			id="memarker" 
 			type="pattern" 
 			preset='custom'
-			url ="asset/pattern-frame.patt"
+			url ="asset/qrCodeBlack.patt"
 			smooth="true"
 			smoothCount="10" 
 			smoothTolerance="0.01" 
 			smoothThreshold="7">
 
-			
-				<a-entity 
-				planets 
-				class="clickable" 
-				id="animation"
-				gltf-model="#animation" 
-				position="0 0 0" 
-				rotation="90 0 180" 
-				scale="1 1 1"
-				></a-entity>
-
-
-			</a-marker>
-
-			<a-marker markerhandler 
-			emitevents="true" 
-			cursor="rayOrigin: mouse"
-			id="memarker" 
-			type="pattern" 
-			preset='custom'
-			url ="asset/pattern-qr-code.patt"
-			smooth="true"
-			smoothCount="10" 
-			smoothTolerance="0.01" 
-			smoothThreshold="7">
-
-			
 				<a-entity 
 				planets 
 				class="clickable" 
@@ -75,8 +54,12 @@
 				rotation="90 0 180" 
 				scale="1 1 1"
 				></a-entity>
-
-
+				<a-entity
+				class="sound"
+				id="soundOfSoring"
+				sound ="src: #spring"
+				>
+				</a-entity>
 			</a-marker>
 			<a-entity raycaster="objects: .clickable" cursor></a-entity>
 		<a-entity camera></a-entity>
