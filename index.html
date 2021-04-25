@@ -30,7 +30,7 @@
 			<!--a-assets>
 				
 			</a-assets-->
-			<a-entity raycaster="objects: .clickable" cursor></a-entity>
+			
 			<!--Marker: this has to be change acording to your design-->
 			<a-marker markerhandler 
 			playSound
@@ -44,11 +44,10 @@
 			smoothCount="10" 
 			smoothTolerance="0.01" 
 			smoothThreshold="7">
-
+				<a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: .clickable"></a-entity>
 				<a-entity 
-				planets 
 				class="clickable" 
-				id="univers"
+				id="tree"
 				gltf-model="#univers" 
 				position="0 0 0" 
 				rotation="90 0 180" 
